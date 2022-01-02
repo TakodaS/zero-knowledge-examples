@@ -1,0 +1,13 @@
+import "hashes/sha256/256bitPadded" as sha256
+import "utils/pack/u32/unpack128" as unpack128
+
+// custom sha256 hash function
+def main(field a) -> u32[8]:
+      u32[4] dummyblock1 = [ \
+        0x80000000,
+        0x00000000,
+        0x00000000,
+        0x00000100
+    ]
+    u32[4] aup = unpack128(a)
+    return sha256([...dummyblock1, ...aup])
