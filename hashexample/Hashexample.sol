@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "./verifier.sol";
 
-contract Vault is Verifier {
+contract Hashexample is Verifier {
   address payable receiver;
 
   function claim(Proof memory proof) public   {
